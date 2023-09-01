@@ -46,7 +46,7 @@ await printPaginated();
 
 const {body: {data: {products}}} = await client.query({
   data: `{
-    products(first:10, sortKey: TITLE) {
+    products(first:100, sortKey: TITLE) {
       edges {
         node {
           id
@@ -57,4 +57,4 @@ const {body: {data: {products}}} = await client.query({
   }`,
 });
 
-console.log("All products: ", products.edges, products.edges.length);
+console.log("All products: ", products.edges);
